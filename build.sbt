@@ -38,3 +38,6 @@ parallelExecution in Test := true
 updateOptions := updateOptions.value.withCachedResolution(true)
 
 scapegoatVersion := "1.3.0"
+
+tutSettings
+tutTargetDirectory := file(".")
