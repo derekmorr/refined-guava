@@ -7,11 +7,11 @@ import eu.timepit.refined.api.Validate
 import refined.guava.net.net.{DNS, IP, IPv4, IPv6, Media}
 
 object net extends NetValidate {
-  final case class IP()
-  final case class IPv4()
-  final case class IPv6()
-  final case class DNS()
-  final case class Media()
+  case class IP()
+  case class IPv4()
+  case class IPv6()
+  case class DNS()
+  case class Media()
 }
 
 private[net] trait NetValidate {

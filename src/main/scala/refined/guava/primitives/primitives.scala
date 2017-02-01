@@ -8,8 +8,8 @@ import refined.guava.primitives.primitives.{UInt, ULong}
 
 
 object primitives extends PrimitivesValidate {
-  final case class UInt()
-  final case class ULong()
+  case class UInt()
+  case class ULong()
 
   type RadixInterval = Interval.Closed[W.`2`.T, W.`36`.T]
 }
