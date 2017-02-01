@@ -6,14 +6,20 @@ A set of [refinement types](https://github.com/fthomas/refined) for Google's [Gu
 
 # Quickstart
 
+Code samples assume these imports:
+
+```tut:silent
+import java.net.InetAddress
+import com.google.common.net.InternetDomainName
+import eu.timepit.refined.api.Refined
+import eu.timepit.refined.auto._
+import refined.guava.net._
+import refined.guava.net.net.IP
+```
+
 Checking values at compile-time using helper functions:
 
 ```tut
-import java.net.InetAddress
-import com.google.common.net.InternetDomainName
-import eu.timepit.refined.auto._
-import refined.guava.net._
-
 val ipv4Loopback: InetAddress = ip("127.0.0.1")
 val hostname: InternetDomainName = dns("foo.org.co.uk")
 ```
@@ -21,10 +27,6 @@ val hostname: InternetDomainName = dns("foo.org.co.uk")
 Values can also be checked using refinement predicates:
 
 ```tut
-import eu.timepit.refined.api.Refined
-import eu.timepit.refined.auto._
-import refined.guava.net.net.IP
-
 val dns1: String Refined IP = "2001:db8::f00:123"
 ```
 
@@ -49,8 +51,7 @@ To generate a code coverage report run,
 
     sbt clean coverage test coverageReport
 
-The HTML report will be written to `target/scala-2.11/scoverage-report/index.html`.
-
+The HTML report will be written to `target/scala-2.12/scoverage-report/index.html`.
 
 
 # Code quality analysis
@@ -60,5 +61,5 @@ Run run a scapegoat report, run
 
     sbt scapegoat
 
-The HTML report will be written to `target/scala-2.11/scapegoat-report/scapegoat.html`
+The HTML report will be written to `target/scala-2.12/scapegoat-report/scapegoat.html`
 
