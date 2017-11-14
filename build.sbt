@@ -2,16 +2,16 @@ name := "refined-guava"
 
 version := "0.0.1"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.4"
 
 lazy val root = project in file(".")
 
 libraryDependencies ++= {
   Seq(
-    "com.google.guava"    %  "guava"            % "21.0"    % Compile,
-    "eu.timepit"          %% "refined"          % "0.6.2"   % Compile,
-    "org.scalatest"       %% "scalatest"      	% "3.0.1"   % Test,
-    "org.pegdown"         %  "pegdown"        	% "1.6.0"   % Test
+    "com.google.guava"    %  "guava"            % "23.4-jre"  % Compile,
+    "eu.timepit"          %% "refined"          % "0.8.4"     % Compile,
+    "org.scalatest"       %% "scalatest"      	% "3.0.1"     % Test,
+    "org.pegdown"         %  "pegdown"        	% "1.6.0"     % Test
   )
 }
 
@@ -37,7 +37,7 @@ parallelExecution in Test := true
 // cache dependency resolution information
 updateOptions := updateOptions.value.withCachedResolution(true)
 
-scapegoatVersion := "1.3.0"
+scapegoatVersion in ThisBuild := "1.3.3"
 
-tutSettings
+enablePlugins(TutPlugin)
 tutTargetDirectory := file(".")
