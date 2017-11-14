@@ -2,7 +2,7 @@ package refined.guava.primitives
 
 import com.google.common.primitives.{UnsignedInteger, UnsignedLong}
 import eu.timepit.refined.W
-import eu.timepit.refined.api.{Refined, Validate}
+import eu.timepit.refined.api.Validate
 import eu.timepit.refined.numeric.Interval
 import refined.guava.primitives.primitives.{UInt, ULong}
 
@@ -20,6 +20,4 @@ private[primitives] trait PrimitivesValidate {
 
   implicit def unsignedLongValidate: Validate.Plain[String, ULong] =
     Validate.fromPartial(UnsignedLong.valueOf, "UnsignedInteger", ULong())
-
-
 }
